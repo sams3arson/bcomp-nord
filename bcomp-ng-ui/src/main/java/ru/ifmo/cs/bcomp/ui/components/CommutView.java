@@ -18,6 +18,7 @@ public class CommutView extends JComponent {
 
         JLabel title = new JLabel("Commutator", JLabel.CENTER);
         title.setFont(FONT_COURIER_BOLD_21);
+        title.setForeground(COLOR_TEXT);
         title.setBounds(x, y, width, height);
         add(title);
 
@@ -28,8 +29,6 @@ public class CommutView extends JComponent {
     public void paintComponent(Graphics g) {
         g.setColor(COLOR_TITLE);
         g.fillRect(x, y, wight,height);
-        g.setColor(COLOR_TEXT);
-        g.drawRect(x, y,wight-1,height-1);
     }
 }
 

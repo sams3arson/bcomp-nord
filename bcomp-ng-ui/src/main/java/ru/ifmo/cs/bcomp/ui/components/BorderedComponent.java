@@ -9,7 +9,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
-import static ru.ifmo.cs.bcomp.ui.components.DisplayStyles.COLOR_TEXT;
+import static ru.ifmo.cs.bcomp.ui.components.DisplayStyles.*;
 
 /**
  *
@@ -26,6 +26,7 @@ public class BorderedComponent extends JComponent {
 	protected final JLabel addLabel(String value, Font font, Color color) {
 		JLabel label = new JLabel(value, JLabel.CENTER);
 		label.setFont(font);
+		label.setForeground(COLOR_TEXT);
 		label.setBackground(color);
 		label.setOpaque(true);
 		add(label);
@@ -38,7 +39,7 @@ public class BorderedComponent extends JComponent {
 
 	@Override
 	public void paintComponent(Graphics g) {
-		g.setColor(COLOR_TEXT);
+		g.setColor(COLOR_BORDER);
 		g.drawRect(0, 0, width - 1, height - 1);
 	}
 }

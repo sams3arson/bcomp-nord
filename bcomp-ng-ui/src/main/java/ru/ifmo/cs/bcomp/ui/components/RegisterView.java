@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import ru.ifmo.cs.components.Utils;
 import static ru.ifmo.cs.bcomp.ui.components.DisplayStyles.CELL_HEIGHT;
 import static ru.ifmo.cs.bcomp.ui.components.DisplayStyles.COLOR_TITLE;
+import static ru.ifmo.cs.bcomp.ui.components.DisplayStyles.COLOR_TEXT;
 import static ru.ifmo.cs.bcomp.ui.components.DisplayStyles.REG_TITLE_WIDTH;
 
 import ru.ifmo.cs.components.DataDestination;
@@ -89,6 +90,6 @@ public class RegisterView extends BCompComponent implements DataDestination {
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.setColor(Color.BLACK);
+		g.setColor(COLOR_TEXT);
 	}
 }

@@ -4,6 +4,10 @@
 
 package ru.ifmo.cs.bcomp.ui;
 
+import javax.swing.UIManager;
+import static ru.ifmo.cs.bcomp.ui.components.DisplayStyles.COLOR_BACKGROUND;
+import static ru.ifmo.cs.bcomp.ui.components.DisplayStyles.COLOR_TEXT;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.nio.charset.Charset;
@@ -67,6 +71,24 @@ public class BCompApp {
 		bcomp.startTimer();
 
 		if (app.equals("gui")) {
+			try {
+				UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+			
+				UIManager.put("Panel.background", COLOR_BACKGROUND);
+				UIManager.put("Frame.background", COLOR_BACKGROUND);
+				UIManager.put("JFrame.background", COLOR_BACKGROUND);
+				UIManager.put("JApplet.background", COLOR_BACKGROUND);
+				UIManager.put("TabbedPane.background", COLOR_BACKGROUND);
+				UIManager.put("Viewport.background", COLOR_BACKGROUND);
+				UIManager.put("TabbedPane.contentAreaColor", COLOR_BACKGROUND);
+				UIManager.put("TabbedPane.selected", COLOR_BACKGROUND);
+				UIManager.put("TabbedPane.contentBorderInsets", new java.awt.Insets(0, 0, 0, 0));
+				UIManager.put("TabbedPane.contentOpaque", true);
+				UIManager.put("TabbedPane.foreground", COLOR_TEXT);
+			} catch (Exception e) {
+				System.err.println("Failed to set cross-platform L&F. Nord theme won't render properly");
+				e.printStackTrace();
+			}
 			GUI gui = new GUI(bcomp);
 			gui.gui();
 			return;

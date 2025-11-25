@@ -71,6 +71,8 @@ public class ComponentManager {
 			for (int i = 0; i < buttons.length - 2; i++) {
 				buttons[i] = new JButton(buttonProperties[i].texts[0]);
 				buttons[i].setForeground(buttonColors[0]);
+				buttons[i].setBackground(COLOR_BUTTON);
+				buttons[i].setOpaque(true);
 				buttons[i].setFont(FONT_COURIER_PLAIN_12);
 				buttons[i].setFocusable(false);
 				buttons[i].addActionListener(buttonProperties[i].listener);
@@ -89,7 +91,8 @@ public class ComponentManager {
 			constraints.anchor = GridBagConstraints.CENTER;
 			rbRanStop = new JRadioButton(buttonProperties[5].texts[0]);
 			rbRanStop.setFont(FONT_COURIER_PLAIN_12);
-			rbRanStop.setBackground(new Color(200, 221, 242));
+			rbRanStop.setForeground(COLOR_TEXT);
+			rbRanStop.setBackground(COLOR_BACKGROUND);
 			rbRanStop.setBorderPainted(false);
 			rbRanStop.addActionListener(buttonProperties[5].listener);
 			rbRanStop.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -100,7 +103,8 @@ public class ComponentManager {
 
 			rbTact = new JRadioButton((buttonProperties[6].texts[0]));
 			rbTact.setFont(FONT_COURIER_PLAIN_12);
-			rbTact.setBackground(new Color(200, 221, 242));
+			rbTact.setForeground(COLOR_TEXT);
+			rbTact.setBackground(COLOR_BACKGROUND);
 			rbTact.setBorderPainted(false);
 			rbTact.addActionListener(buttonProperties[6].listener);
 			rbTact.setCursor(new Cursor(Cursor.HAND_CURSOR));

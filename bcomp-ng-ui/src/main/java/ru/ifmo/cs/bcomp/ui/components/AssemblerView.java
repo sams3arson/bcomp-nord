@@ -40,29 +40,41 @@ public class AssemblerView extends BCompPanel implements ActionListener {
 		this.cmanager = gui.getComponentManager();
                 
                 JPanel pane = new JPanel(new BorderLayout());
+                pane.setBackground(COLOR_BACKGROUND);
                 
 		text = new JTextArea();
 		text.setFont(FONT_COURIER_BOLD_21);
+		text.setBackground(COLOR_BACKGROUND);
+		text.setForeground(COLOR_TEXT);
+		text.setCaretColor(COLOR_TEXT);
 		JScrollPane scroll = new JScrollPane(text);
+		scroll.getViewport().setBackground(COLOR_BACKGROUND);
 		pane.add(scroll,BorderLayout.CENTER);
 
 		JButton button = new JButton(cmanager.getRes().getString("compile"));
+		button.setBackground(COLOR_BUTTON);
 		button.setForeground(COLOR_TEXT);
+		button.setOpaque(true);
 		button.setFont(FONT_COURIER_PLAIN_12);
 		button.setFocusable(false);
 		button.addActionListener(this);
                 JPanel buttonpane = new JPanel();
+                buttonpane.setBackground(COLOR_BACKGROUND);
                 //buttonpane.applyComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
                 buttonpane.add(button);
                 //button.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 		pane.add(buttonpane,BorderLayout.PAGE_START);
                 errorarea = new JTextArea();
+                errorarea.setBackground(COLOR_BACKGROUND);
+                errorarea.setForeground(COLOR_TEXT);
                 //errorarea.setRows(3);
                 errorarea.setEditable(false);
                 JScrollPane errscroll = new JScrollPane(errorarea);
+                errscroll.getViewport().setBackground(COLOR_BACKGROUND);
                 pane.add(errscroll,BorderLayout.SOUTH);
                 
                 JSplitPane splitpane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, pane, errscroll);
+                splitpane.setBackground(COLOR_BACKGROUND);
                 splitpane.setDividerSize(4);
                 splitpane.setDividerLocation((int)(PANE_HEIGHT*0.8)); // TODO FIX ALL Layouts
                 add(splitpane);

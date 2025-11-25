@@ -22,6 +22,7 @@ public class FlagView extends JComponent  {
 
          title = new JLabel("", JLabel.CENTER);
         title.setFont(FONT_COURIER_BOLD_21);
+        title.setForeground(COLOR_TEXT);
         title.setBounds(x, y, wigth, height);
         add(title);
         setBounds(x, y, wigth, height);
@@ -33,6 +34,7 @@ public class FlagView extends JComponent  {
     public void setTitle(String title) {
         this.title = new JLabel(title, JLabel.CENTER) ;
         this.title.setFont(FONT_COURIER_BOLD_21);
+        this.title.setForeground(COLOR_TEXT);
         this.title.setBounds(x, y, wight, height);
         add(this.title);
     }
@@ -45,8 +47,6 @@ public class FlagView extends JComponent  {
     public void paintComponent(Graphics g) {
         g.setColor(active?COLOR_TITLE:COLOR_VALUE);
         g.fillRect(x, y, wight,height);
-        g.setColor(COLOR_TEXT);
-        g.drawRect(x, y,wight-1,height-1);
     }
 
 }

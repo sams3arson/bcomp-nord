@@ -47,6 +47,9 @@ public class GUI extends JApplet {
 
 		tabs = new JTabbedPane();
 		tabs.addKeyListener(cmanager.getKeyListener());
+		
+		tabs.setBackground(DisplayStyles.COLOR_BACKGROUND);
+		tabs.setOpaque(true);
 
 		tabs.addChangeListener(new ChangeListener() {
 			@Override
@@ -72,6 +75,9 @@ public class GUI extends JApplet {
 		});
 		for (ActivateblePanel pane : panels) {
 			pane.setPreferredSize(PANE_SIZE);
+			
+			pane.setBackground(DisplayStyles.COLOR_BACKGROUND);
+			pane.setOpaque(true);
 
 			tabs.addTab(pane.getPanelName(), pane);
 		}

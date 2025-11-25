@@ -38,9 +38,11 @@ public class MemoryView extends BCompComponent {
 
 		for (int i = 0; i < 16; i++) {
 			addrs[i] = addValueLabel(COLOR_TITLE);
+			addrs[i].setForeground(COLOR_MEMORY_TEXT);
 			addrs[i].setBounds(1, getValueY(i), addrWidth, CELL_HEIGHT);
 
 			values[i] = addValueLabel(COLOR_VALUE);
+			values[i].setForeground(COLOR_MEMORY_TEXT);
 			values[i].setBounds(lineX + 1, getValueY(i), valueWidth, CELL_HEIGHT);
 		}
 	}

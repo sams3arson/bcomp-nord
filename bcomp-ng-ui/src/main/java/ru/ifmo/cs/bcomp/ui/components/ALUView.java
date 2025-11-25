@@ -31,6 +31,7 @@ public class ALUView extends JComponent {
 
 		JLabel title = new JLabel("ALU", JLabel.CENTER);
 		title.setFont(FONT_COURIER_BOLD_45);
+		title.setForeground(COLOR_TEXT);
 		title.setBounds(offset, offset, width - 2 * offset, height - offset);
 		add(title);
 
@@ -41,8 +42,6 @@ public class ALUView extends JComponent {
 	public void paintComponent(Graphics g) {
 		g.setColor(COLOR_TITLE);
 		g.fillPolygon(xpoints, ypoints, xpoints.length);
-		g.setColor(COLOR_TEXT);
-		g.drawPolygon(xpoints, ypoints, xpoints.length);
 
 	}
 }
